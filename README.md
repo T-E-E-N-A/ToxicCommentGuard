@@ -1,4 +1,4 @@
-# ToxicCommentGuard: Advanced Toxic Comment Detection & Insights Platform
+# ToxicCommentGuard: Advanced Toxic Comment Detection
 ## Objectives:
 - Toxic Comment Detection: Automatically classify whether a comment is toxic or non-toxic using supervised machine learning models.
 - Comment Categorization: Identify sub-types of toxicity such as insult, obscene, identity hate, threat, etc.
