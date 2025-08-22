@@ -1,4 +1,3 @@
-import React from "react";
 
 const AboutFooter = () => {
   return (
@@ -29,15 +28,15 @@ const AboutFooter = () => {
           <ul className="space-y-2 text-sm">
             <li>
               <span className="font-semibold text-white">Teena</span> –
-              Fullstack Developer, Core ML Integrations
+              Fullstack Developer, Core ML & API Integrations
             </li>
             <li>
               <span className="font-semibold text-white">Prasoon</span> –
-              Assisted in ML model training & testing
+              ML Engineer, Assisted in Model Training & Testing
             </li>
             <li>
-              <span className="font-semibold text-white">Deeksha</span> – Team
-              Lead
+              <span className="font-semibold text-white">Deeksha</span> – 
+              Team Lead, Presentation & Technical Coordination
             </li>
           </ul>
         </div>
@@ -49,7 +48,7 @@ const AboutFooter = () => {
           </h3>
           <div className="flex flex-col space-y-2 text-sm">
             <a
-              href="https://github.com/your-github"
+              href="https://github.com/Deeksha224/ToxicCommentGuard"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition underline"

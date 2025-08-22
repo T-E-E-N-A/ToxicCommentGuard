@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
 
 const Main = () => {
-const API_URL = "http://127.0.0.1:8000"; // change to your deployed URL later
+  // const API_URL = "http://127.0.0.1:8000"; // change to your deployed URL later
+  const API_URL = "http://127.0.0.1:5000/predict";
+
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -28,7 +29,7 @@ const API_URL = "http://127.0.0.1:8000"; // change to your deployed URL later
         setError(data.detail || "Something went wrong");
       }
     } catch (err) {
-      setError("Backend not reachable. "+err);
+      setError("Backend not reachable. " + err);
     }
     setLoading(false);
   };
@@ -57,26 +58,26 @@ const API_URL = "http://127.0.0.1:8000"; // change to your deployed URL later
           </button>
         </form>
 
-        {(result || error) && (
-          <div className="mt-5 text-center">
+        {/* Dedicated Output Box */}
+        <div className="mt-6">
+          <h2 className="text-white text-lg font-medium mb-2">Toxicity:</h2>
+          <div className="w-full min-h-[80px] rounded-xl border border-white/30 bg-white/10 p-3 text-white text-sm overflow-y-auto">
+            {loading && <p className="text-indigo-300">Processing...</p>}
             {result && (
-              <span
-                className={`inline-block rounded-xl px-4 py-2 text-sm font-semibold ${
-                  result.includes("Toxic")
-                    ? "bg-red-500/20 text-red-200"
-                    : "bg-green-500/20 text-green-200"
+              <p
+                className={`font-semibold ${
+                  result.includes("Toxic") ? "text-red-300" : "text-green-300"
                 }`}
               >
                 {result}
-              </span>
+              </p>
             )}
-            {error && (
-              <div className="text-sm text-amber-200 bg-amber-500/20 rounded-xl px-3 py-2">
-                {error}
-              </div>
+            {error && <p className="text-amber-300">{error}</p>}
+            {!loading && !result && !error && (
+              <p className="text-gray-400 italic">No analysis yet.</p>
             )}
           </div>
-        )}
+        </div>
 
         <div className="mt-6 text-xs text-gray-300 text-center">
           API: <code>{API_URL}</code>
